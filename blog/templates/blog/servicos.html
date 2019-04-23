@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset = "UTF-8" />
+        <meta name = "author" content = "John Marcos dos Santos" />
+        <meta name = "robots" content = "index, follow" />
+        <link rel = "icon" href = "{% static 'imagens/icon_anjos_de_plantao.ico' %}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="servicos_css.css">
+				<link rel="stylesheet" href="{% static 'css/servicos_css.css' %}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>Página Inicial</title>
+	</head>
+	<body>
+
+		<div id="box_opcoes_servicos">
+
+        	<a href="cadastrar_pessoa/cadastrar_pessoa.html/">
+        		<div class="botao_opcoes">
+          			<div class="titulo_botao_opcoes">Cadastrar Pessoa</div>
+          			<i class="material-icons">person_add</i>
+        		</div>
+        	</a>
+
+        	<a href="cadastrar_evento/cadastrar_evento.html">
+        		<div class="botao_opcoes">
+                	<div class="titulo_botao_opcoes">Cadastrar Evento</div>
+          			<i class="material-icons">event_note</i>
+        		</div>
+        	</a>
+
+        	<a href="doacoes/doacoes.html">
+        		<div class="botao_opcoes">
+            		<div class="titulo_botao_opcoes_menor">Doações</div>
+            		<i class="material-icons">favorite_border</i>
+        		</div>
+        	</a>
+
+        	<a href="caixa_geral/caixa_geral.html">
+        		<div class="botao_opcoes">
+          	    	<div class="titulo_botao_opcoes_menor">Caixa Geral</div>
+          	    	<i class="material-icons">monetization_on</i>
+        		</div>
+        	</a>
+
+        	<a href="cadastrar_usuario/cadastrar_usuario.html">
+        		<div class="botao_opcoes">
+          	       <div class="titulo_botao_opcoes">Cadastrar Usuário</div>
+          	       <i class="material-icons">account_circle</i>
+        		</div>
+        	</a>
+
+        	<a href="consultas/consultas.html">
+        		<div class="botao_opcoes">
+          			<div class="titulo_botao_opcoes_menor">Consultas</div>
+          			<i class="material-icons">search</i>
+        		</div>
+        	</a>
+
+        	<a href="../index.html">
+        		<div class="botao_opcoes">
+          			<div class="titulo_botao_opcoes">Sair do Sistema</div>
+          			<i class="material-icons">power_settings_new</i>
+        		</div>
+        	</a>
+        </div>
+	</body>
+</html>

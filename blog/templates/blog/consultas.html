@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8" />
+        <meta name = "author" content = "John Marcos dos Santos" />
+        <meta name = "robots" content = "index, follow" />
+        <meta http-equiv = "refresh" content = "300" />
+        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="../servicos_individuais_css.css">        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+		<title>Consultas</title>
+</script>
+
+	</head>
+	<body>
+
+		<div id="box_fundo">	
+
+			<a href="../servicos.html" id="posicao_botoes_voltar">
+				<button type="submit" name="botao_voltar">Voltar</button>
+			</a>
+
+			<form action="#salvar" method="post">		
+
+				<div id="posicao_botoes"> 	
+					<button type="reset" name="botao_limpar_dados">Limpar Dados</button>
+					<button type="submit" name="botao_salvar">Salvar</button>
+				</div>
+				<br>
+				<br>	
+
+				<div class="box_texto_formularios">
+					<fieldset id="legend_consultas">
+              			<legend>Consultas</legend>
+	              		Dados
+						<input type="text" name="entrada_doador_recebedor" required="required" style="width: 200px;">
+						Filtro 
+						<input list="lista_filtros" name="filtro_pesquisa">
+						<datalist id="lista_filtros">
+	    					<option value="Pessoas">
+    						<option value="Eventos">
+    						<option value="Doações">
+	    					<option value="Transações">
+    						<option value="Usuários">
+    					</datalist>
+						<button id="botao_opcoes" type="submit" name="botao_salvar">
+							<i class="material-icons">search</i>Pesquisar
+						</button>	
+            		</fieldset>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

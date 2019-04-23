@@ -1,0 +1,62 @@
+{% load static %}
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+	body {
+		background-color: #E0FFFF;
+	}
+
+	#box_opcoes_servicos{
+      	position: relative;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 3% 3% 3% 3%;
+        margin: 2%;
+        background-repeat: no-repeat;
+        background-image: url('{% static 'imagens/logo_anjos_de_plantao.png' %}');
+        background-size: 350px;
+        background-position: bottom right;
+        border-radius: 34px;
+    }
+
+	.botao_opcoes{
+        border: 4px solid black;
+        padding-bottom: 3%;
+        padding-right: 30px;
+        padding-left: 30px;
+        width: 200px;
+        height: 200px;
+        background-color: white;
+        margin: 0 auto 15px 30px;
+        border-radius: 25px;
+    }
+
+    .botao_opcoes .material-icons{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 115px;
+        color: black;
+    }
+
+    .titulo_botao_opcoes {
+        font-family: 'Raleway', sans-serif;
+    	font-size: 30px;
+        text-align: center;
+        color: black;
+    }
+
+    .titulo_botao_opcoes_menor {
+        font-family: 'Raleway', sans-serif;
+    	font-size: 30px;
+        text-align: center;
+        color: black;
+        padding-top: 12%;
+    }
+
+    a {
+
+    	text-decoration: none;
+    }

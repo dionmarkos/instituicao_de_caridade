@@ -1,0 +1,61 @@
+{% load static %}
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+	body {
+		background-color: #66b3ff;
+		background-image: url("{% static 'imagens/logo_anjos_de_plantao.png' %}");
+		background-repeat: repeat-x;
+    background-size: 400px;
+    background-position: bottom center;
+    opacity: 0.9;
+	}
+
+	.box_login {
+		background-color: #E0FFFF;
+		display: flex;
+		width: 300px;
+		height: 380px;
+		margin: 5% auto 5% auto;
+		border: 4px solid white;
+		display: block;
+		border-radius: 34px;
+	}
+
+	#box_login_titulo {
+		font-family: 'Raleway', sans-serif;
+		text-align: center;
+		font-size: 45px;
+		max-height: 13%;
+		opacity: 0.8;
+		display: block;
+		margin: 0 auto;
+		padding-bottom: 30%;
+	}
+
+	.box_login_texto_formularios {
+		font-family: 'Raleway', sans-serif;
+		font-size: 30px;
+		opacity: 0.8;
+	}
+
+	#box_login_posicao_formularios {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	input, button {
+		border: 1px solid grey;
+		border-style: outset;
+		border-radius: 15px;
+		border-left: 7px solid black;
+		border-right: 7px solid black;
+		font-family: 'Raleway', sans-serif;
+		font-size: 18px;
+		text-align: center;
+	}
+
+	#box_login_posicao_botoes {
+		padding: 25px 0 0 0;
+	}

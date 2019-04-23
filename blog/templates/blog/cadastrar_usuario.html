@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8" />
+        <meta name = "author" content = "John Marcos dos Santos" />
+        <meta name = "robots" content = "index, follow" />
+        <meta http-equiv = "refresh" content = "300" />
+        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="../servicos_individuais_css.css">
+		<title>Cadastrar Usuário</title>
+</script>
+
+	</head>
+	<body>
+
+		<div id="box_fundo">
+
+			<a href="../servicos.html" id="posicao_botoes_voltar">
+				<button type="submit" name="botao_voltar">Voltar</button>
+			</a>	
+
+			<form action="#salvar" method="post">		
+
+				<div id="posicao_botoes"> 	
+					<button type="reset" name="botao_limpar_dados">Limpar Dados</button>
+					<button type="submit" name="botao_salvar">Salvar</button>
+				</div>
+				<br>
+				<br>	
+				
+				<div class="box_texto_formularios">
+					<fieldset id="legend_tipo_de_cadastro">
+						<legend>Permissões de Usuário</legend>
+						<input type="radio" name="entrada_tipo_usuario" value="tipo_pessoa_fisica" checked> Básico
+						<input type="radio" name="entrada_tipo_usuario" value="tipo_pessoa_juridica"> Administrador
+					</fieldset>
+				</div> 
+
+				<div class="box_texto_formularios">
+					<label for="nome"> Nome </label>
+					<input autofocus="autofocus" type="text" id="entrada_nome" required="required" style="width: 400px;">
+				</div>
+
+				<div class="box_texto_formularios">
+					<label for="nome"> User </label>
+					<input autofocus="autofocus" type="text" id="entrada_user" required="required" style="width: 150px;">
+				</div>
+
+				<div class="box_texto_formularios">
+					<label for="cpf"> Senha </label>
+					<input type="text" name="entrada_senha" required="required" style="width: 180px;">
+				</div>
+
+				<div class="box_texto_formularios">
+					<label for="endereco"> Digite a Senha Novamente </label>
+					<input type="text" name="entrada_senha_2" required="required" style="width: 180px;">
+				</div>
+
+				<div class="box_texto_formularios">
+					<fieldset id="legend_observacoes">
+              			<legend>Observações</legend>
+	              			<br>
+	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="recado"></textarea>
+            		</fieldset>
+				</div>
+
+
+			</form>
+			
+
+		</div>
+
+	</body>
+</html>
