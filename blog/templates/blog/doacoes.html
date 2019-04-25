@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 	<head>
 		<meta charset = "UTF-8" />
@@ -7,28 +8,28 @@
         <meta http-equiv = "refresh" content = "300" />
         <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="../servicos_individuais_css.css">        
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>Doações</title>
 </script>
 
 	</head>
 	<body>
 
-		<div id="box_fundo">	
+		<div id="box_fundo">
 
-			<a href="../servicos.html" id="posicao_botoes_voltar">
+			<a href="../servicos/" id="posicao_botoes_voltar">
 				<button type="submit" name="botao_voltar">Voltar</button>
 			</a>
 
-			<form action="#salvar" method="post">		
+			<form action="#salvar" method="post">
 
-				<div id="posicao_botoes"> 	
+				<div id="posicao_botoes">
 					<button type="reset" name="botao_limpar_dados">Limpar Dados</button>
 					<button type="submit" name="botao_salvar">Salvar</button>
 				</div>
 				<br>
-				<br>	
+				<br>
 
 				<div class="box_texto_formularios">
 					<label for="local"> Doador/Recebedor </label>
@@ -36,7 +37,7 @@
 					<button id="botao_opcoes" type="submit" name="botao_salvar">
 						<i class="material-icons">search</i>Pesquisar
 					</button>
-				</div>	
+				</div>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_tipo_de_pessoa">
@@ -54,7 +55,7 @@
 				<div class="box_texto_formularios">
 					<label for="endereco"> Valor (Opicional) </label>
 					<input type="text" name="entrada_endereco" required="required" style="width: 130px;">
-				</div>			
+				</div>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_observacoes">
@@ -66,7 +67,7 @@
 
 
 			</form>
-			
+
 
 		</div>
 

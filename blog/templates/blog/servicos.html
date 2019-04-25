@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% extends 'login.html' %}
 <html>
 	<head>
 		<meta charset = "UTF-8" />
@@ -7,58 +8,64 @@
         <meta name = "robots" content = "index, follow" />
         <link rel = "icon" href = "{% static 'imagens/icon_anjos_de_plantao.ico' %}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="servicos_css.css">
 				<link rel="stylesheet" href="{% static 'css/servicos_css.css' %}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>Página Inicial</title>
 	</head>
 	<body>
 
+		{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
 		<div id="box_opcoes_servicos">
 
-        	<a href="cadastrar_pessoa/cadastrar_pessoa.html/">
+        	<a href="../cadastrar_pessoa/">
         		<div class="botao_opcoes">
           			<div class="titulo_botao_opcoes">Cadastrar Pessoa</div>
           			<i class="material-icons">person_add</i>
         		</div>
         	</a>
 
-        	<a href="cadastrar_evento/cadastrar_evento.html">
+        	<a href="../cadastrar_evento/">
         		<div class="botao_opcoes">
                 	<div class="titulo_botao_opcoes">Cadastrar Evento</div>
           			<i class="material-icons">event_note</i>
         		</div>
         	</a>
 
-        	<a href="doacoes/doacoes.html">
+        	<a href="../doacoes/">
         		<div class="botao_opcoes">
             		<div class="titulo_botao_opcoes_menor">Doações</div>
             		<i class="material-icons">favorite_border</i>
         		</div>
         	</a>
 
-        	<a href="caixa_geral/caixa_geral.html">
+        	<a href="../caixa_geral/">
         		<div class="botao_opcoes">
           	    	<div class="titulo_botao_opcoes_menor">Caixa Geral</div>
           	    	<i class="material-icons">monetization_on</i>
         		</div>
         	</a>
 
-        	<a href="cadastrar_usuario/cadastrar_usuario.html">
+        	<a href="../cadastrar_usuario/">
         		<div class="botao_opcoes">
           	       <div class="titulo_botao_opcoes">Cadastrar Usuário</div>
           	       <i class="material-icons">account_circle</i>
         		</div>
         	</a>
 
-        	<a href="consultas/consultas.html">
+        	<a href="../consultas/">
         		<div class="botao_opcoes">
           			<div class="titulo_botao_opcoes_menor">Consultas</div>
           			<i class="material-icons">search</i>
         		</div>
         	</a>
 
-        	<a href="../index.html">
+        	<a href="../">
         		<div class="botao_opcoes">
           			<div class="titulo_botao_opcoes">Sair do Sistema</div>
           			<i class="material-icons">power_settings_new</i>

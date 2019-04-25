@@ -1,3 +1,4 @@
+{% extends 'servicos.html' %}
 <!DOCTYPE html>
 {% load static %}
 <html>
@@ -19,6 +20,7 @@
 			<form id="box_login_posicao_formularios" action="servicos/" method="post">
 
 				{% csrf_token %}
+        {{ form.as_p }}
 				<div class="box_login_texto_formularios">
 					<label for="usuario"> Usuário </label>
 					<input autofocus="autofocus" type="text" name="entrada_usuario" required="required">

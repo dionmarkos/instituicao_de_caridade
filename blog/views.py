@@ -7,6 +7,9 @@ def post_list(request):
     posts = Post.objects.filter(data_publicacao__lte=timezone.now()).order_by('data_publicacao')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
+def loginRegistration(request):
+    return render(request, 'registration/login.html', {})
+
 def login(request):
     return render(request, 'blog/index.html', {})
 
@@ -30,3 +33,11 @@ def consultas(request):
 
 def doacoes(request):
     return render(request, 'blog/doacoes.html', {})
+# MÉTODOS
+def validacaoLogin(request, entrada_usuario, entrada_senha):
+    try:
+        usuario = Usuario.objects.get(nome=entrada_usuario)
+        if(usuario.getSenha == entrada_senha):
+            return "ok"
+    except Exception as usuarioNaoEncontrado:
+        usuario = None

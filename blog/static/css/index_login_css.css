@@ -1,10 +1,9 @@
-{% load static %}
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 	body {
 		background-color: #66b3ff;
-		background-image: url("{% static 'imagens/logo_anjos_de_plantao.png' %}");
+		background-image: url("../imagens/logo_anjos_de_plantao.png");
 		background-repeat: repeat-x;
     background-size: 400px;
     background-position: bottom center;

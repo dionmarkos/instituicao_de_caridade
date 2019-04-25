@@ -1,4 +1,3 @@
-{% load static %}
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
@@ -15,7 +14,7 @@
         padding: 3% 3% 3% 3%;
         margin: 2%;
         background-repeat: no-repeat;
-        background-image: url('{% static 'imagens/logo_anjos_de_plantao.png' %}');
+        background-image: url("../imagens/logo_anjos_de_plantao.png");
         background-size: 350px;
         background-position: bottom right;
         border-radius: 34px;
