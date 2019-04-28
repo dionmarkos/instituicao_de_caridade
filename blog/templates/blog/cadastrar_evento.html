@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-	<head>
-		<meta charset = "UTF-8" />
-        <meta name = "author" content = "John Marcos dos Santos" />
-        <meta name = "robots" content = "index, follow" />
-        <meta http-equiv = "refresh" content = "300" />
-        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
-		<title>Cadastrar Evento</title>
-</script>
-
-	</head>
-	<body>
-
-		<div id="box_fundo">
+{% extends 'blog/base_servicos_individuais.html' %}
+	{% block title %}Cadastrar Evento{% endblock %}
+		{% block content %}
 
 			<a href="../servicos/" id="posicao_botoes_voltar">
 				<button type="submit" name="botao_voltar">Voltar</button>
@@ -32,31 +17,31 @@
 
 				<div class="box_texto_formularios">
 					<label for="nome"> Nome </label>
-					<input autofocus="autofocus" type="text" id="entrada_nome_evento" required="required" style="width: 400px;">
+					<input autofocus="autofocus" type="text" name="nome" required="required" style="width: 400px;">
 					<label for="data"> Data </label>
-					<input autofocus="autofocus" type="date" id="entrada_data" required="required" style="margin-right: 20px;">
+					<input autofocus="autofocus" type="date" name="data" required="required" style="margin-right: 20px;">
 					Concluído?
 					<label class="switch">
-						<input type="checkbox">
+						<input type="checkbox" name="booleanConcluido">
   						<span class="slider round"></span>
 					</label>
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="local"> Local </label>
-					<input type="text" name="entrada_local" required="required" style="width: 400px;">
+					<input type="text" name="local" required="required" style="width: 400px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="endereco"> Endereço </label>
-					<input type="text" name="entrada_endereco" required="required" style="width: 400px;">
+					<input type="text" name="endereco" required="required" style="width: 400px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="cidade"> Cidade </label>
-					<input type="text" name="entrada_cidade" required="required" style="width: 280px;">
+					<input type="text" name="cidade" required="required" style="width: 280px;">
 					<label for="estado"> Estado </label>
-					<input type="text" name="entrada_estado" required="required" style="width: 200px;">
+					<input type="text" name="estado" required="required" style="width: 200px;">
 				</div>
 
 
@@ -64,15 +49,8 @@
 					<fieldset id="legend_observacoes">
               			<legend>Observações</legend>
 	              			<br>
-	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="recado"></textarea>
+	              			<textarea name="observacoes" class="box_texto_formularios" rows="6" cols="40"></textarea>
             		</fieldset>
 				</div>
-
-
 			</form>
-
-
-		</div>
-
-	</body>
-</html>
+{% endblock %}

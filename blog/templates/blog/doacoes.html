@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-	<head>
-		<meta charset = "UTF-8" />
-        <meta name = "author" content = "John Marcos dos Santos" />
-        <meta name = "robots" content = "index, follow" />
-        <meta http-equiv = "refresh" content = "300" />
-        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>Doações</title>
-</script>
-
-	</head>
-	<body>
-
-		<div id="box_fundo">
+{% extends 'blog/base_servicos_individuais.html' %}
+	{% block title %}Doações{% endblock %}
+		{% block content %}
 
 			<a href="../servicos/" id="posicao_botoes_voltar">
 				<button type="submit" name="botao_voltar">Voltar</button>
@@ -42,34 +26,27 @@
 				<div class="box_texto_formularios">
 					<fieldset id="legend_tipo_de_pessoa">
 						<legend>Tipo</legend>
-						<input type="radio" name="entrada_tipo_doacao" value="" checked> Doação
-						<input type="radio" name="entrada_tipo_doacao" value=""> Recebimento
+						<input type="radio" name="tipoDoacaoDoacao" value="" checked> Doação
+						<input type="radio" name="tipoDoacaoRecebimento" value=""> Recebimento
 					</fieldset>
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="data"> Data </label>
-					<input autofocus="autofocus" type="date" id="entrada_data" required="required" style="margin-right: 20px;">
+					<input autofocus="autofocus" type="date" name="data" id="entrada_data" required="required" style="margin-right: 20px;">
 				</div>
 
 				<div class="box_texto_formularios">
-					<label for="endereco"> Valor (Opicional) </label>
-					<input type="text" name="entrada_endereco" required="required" style="width: 130px;">
+					<label for="valor"> Valor (Opicional) </label>
+					<input type="text" name="valor" required="required" style="width: 130px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_observacoes">
               			<legend>Observações/Doações</legend>
 	              			<br>
-	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="recado"></textarea>
+	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="observacoes"></textarea>
             		</fieldset>
 				</div>
-
-
 			</form>
-
-
-		</div>
-
-	</body>
-</html>
+{% endblock %}

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-	<head>
-		<meta charset = "UTF-8" />
-        <meta name = "author" content = "John Marcos dos Santos" />
-        <meta name = "robots" content = "index, follow" />
-        <meta http-equiv = "refresh" content = "300" />
-        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>Consultas</title>
-</script>
-
-	</head>
-	<body>
-
-		<div id="box_fundo">
+{% extends 'blog/base_servicos_individuais.html' %}
+{% block title %}Consultas{% endblock %}
+		{% block content %}
 
 			<a href="../servicos/" id="posicao_botoes_voltar">
 				<button type="submit" name="botao_voltar">Voltar</button>
@@ -51,6 +35,4 @@
             		</fieldset>
 				</div>
 			</form>
-		</div>
-	</body>
-</html>
+		{% endblock %}

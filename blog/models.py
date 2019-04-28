@@ -18,6 +18,7 @@ class Post(models.Model):
         return self.titulo
 
 class Pessoa(models.Model):
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     tipoCadastroPessoaFisica = models.BooleanField(default=True)
     tipoCadastroPessoaJuridica = models.BooleanField(default=False)
     tipoPessoaDoador = models.BooleanField(default=True)
@@ -124,6 +125,7 @@ class Pessoa(models.Model):
         self.observacoes = observacoes
 # *******FIM DA CLASSE PESSOA********
 class Evento(models.Model):
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     nome = models.TextField()
     data = models.DateTimeField()
     booleanConcluido = models.BooleanField(default=False)
@@ -198,8 +200,8 @@ class Evento(models.Model):
 # *******FIM DA CLASSE EVENTO********
 class Doacao(models.Model):
     pessoa = models.ForeignKey('Pessoa',on_delete=models.CASCADE)
-    tipo_doacao_doacao = models.BooleanField(default=True)
-    tipo_doacao_recebimento = models.BooleanField(default=False)
+    tipoDoacaoDoacao = models.BooleanField(default=True)
+    tipoDoacaoRecebimento = models.BooleanField(default=False)
     data = models.DateTimeField()
     valor = models.TextField()
     observacoes = models.TextField()
@@ -207,23 +209,16 @@ class Doacao(models.Model):
 
 
 class CaixaGeral(models.Model):
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     pessoa = models.ForeignKey('Pessoa',on_delete=models.CASCADE)
-    tipo_doacao_doacao = models.BooleanField(default=True)
-    tipo_doacao_recebimento = models.BooleanField(default=False)
+    tipoDoacaoDoacao = models.BooleanField(default=True)
+    tipoDoacaoRecebimento = models.BooleanField(default=False)
     data = models.DateTimeField()
     valor = models.TextField()
     observacoes = models.TextField()
 
-class Usuario(models.Model):
-    tipo_usuario_basico = models.BooleanField(default=True)
-    tipo_usuario_admninistrador = models.BooleanField(default=False)
-    nome = models.TextField()
-    usuario = models.CharField(max_length=18)
-    senha = models.TextField()
-    observacoes = models.TextField()
-    data_criacao = models.DateTimeField(default=timezone.now)
-
 class Consulta(models.Model):
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     pessoa = models.ForeignKey('Pessoa',on_delete=models.CASCADE)
     evento = models.ForeignKey('Evento',on_delete=models.CASCADE)
     doacoes = models.ForeignKey('Doacao',on_delete=models.CASCADE)

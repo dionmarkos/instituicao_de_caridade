@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-	<head>
-		<meta charset = "UTF-8" />
-        <meta name = "author" content = "John Marcos dos Santos" />
-        <meta name = "robots" content = "index, follow" />
-        <meta http-equiv = "refresh" content = "300" />
-        <link rel = "icon" href = "../../icon_anjos_de_plantao.ico"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
-		<title>Cadastrar Pessoa</title>
-</script>
-
-	</head>
-	<body>
-
-		<div id="box_fundo">
+{% extends 'blog/base_servicos_individuais.html' %}
+{% block title %}Cadastrar Pessoa{% endblock %}
+		{% block content %}
 
 			<a href="../servicos/" id="posicao_botoes_voltar">
 				<button type="submit" name="botao_voltar">Voltar</button>
@@ -33,61 +18,56 @@
 				<div class="box_texto_formularios">
 					<fieldset id="legend_tipo_de_cadastro">
 						<legend>Tipo de Cadastro</legend>
-						<input type="radio" name="entrada_tipo_pessoa" value="tipo_pessoa_fisica" checked> Pessoa Física
-						<input type="radio" name="entrada_tipo_pessoa" value="tipo_pessoa_juridica"> Pessoa Jurídica
+						<input type="radio" name="tipoCadastroPessoaFisica" value="tipo_pessoa_fisica" checked> Pessoa Física
+						<input type="radio" name="tipoCadastroPessoaJuridica" value="tipo_pessoa_juridica"> Pessoa Jurídica
 					</fieldset>
 				</div>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_tipo_de_pessoa">
 						<legend>Tipo de Pessoa</legend>
-						<input type="checkbox" name="entrada_tipo_cadastro" value="" checked> Doador
-						<input type="checkbox" name="entrada_tipo_cadastro" value=""> Recebedor
+						<input type="checkbox" name="tipoPessoaDoador" value="" checked> Doador
+						<input type="checkbox" name="tipoPessoaRecebedor" value=""> Recebedor
 					</fieldset>
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="nome"> Nome </label>
-					<input autofocus="autofocus" type="text" id="entrada_nome" required="required" style="width: 400px;">
+					<input autofocus="autofocus" type="text" id="entrada_nome" name="nome" required="required" style="width: 400px;">
 				</div>
 
 				<div class="box_texto_formularios">
-					<label for="cpf"> CPF/CNPJ </label>
-					<input type="text" pattern="[0-9]{11-14}" name="entrada_cpf" required="required" style="width: 150px;">
+					<label for="cpfCnpj"> CPF/CNPJ </label>
+					<input type="text" pattern="[0-9]{11-14}" name="cpfCnpj" required="required" style="width: 150px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="endereco"> Endereço </label>
-					<input type="text" name="entrada_endereco" required="required" style="width: 400px;">
+					<input type="text" name="endereco" required="required" style="width: 400px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="cidade"> Cidade </label>
-					<input type="text" name="entrada_cidade" required="required" style="width: 280px;">
+					<input type="text" name="cidade" required="required" style="width: 280px;">
 					<label for="estado"> Estado </label>
-					<input type="text" name="entrada_estado" required="required" style="width: 200px;">
+					<input type="text" name="estado" required="required" style="width: 200px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<label for="endereco"> Telefone 1 </label>
-					<input type="tel" name="entrada_telefone" style="width: 160px;">
+					<input type="tel" name="telefone1" style="width: 160px;">
 					<label for="endereco"> Telefone 2 </label>
-					<input type="tel" name="entrada_telefone2" style="width: 160px;">
+					<input type="tel" name="telefone2" style="width: 160px;">
 				</div>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_observacoes">
               			<legend>Observações</legend>
 	              			<br>
-	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="recado"></textarea>
+	              			<textarea class="box_texto_formularios" rows="6" cols="40" name="observacoes"></textarea>
             		</fieldset>
 				</div>
 
 
 			</form>
-
-
-		</div>
-
-	</body>
-</html>
+{% endblock %}s

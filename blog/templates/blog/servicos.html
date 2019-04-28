@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-{% load static %}
-{% extends 'login.html' %}
-<html>
-	<head>
-		<meta charset = "UTF-8" />
-        <meta name = "author" content = "John Marcos dos Santos" />
-        <meta name = "robots" content = "index, follow" />
-        <link rel = "icon" href = "{% static 'imagens/icon_anjos_de_plantao.ico' %}"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<link rel="stylesheet" href="{% static 'css/servicos_css.css' %}">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>Página Inicial</title>
-	</head>
-	<body>
+{% extends 'blog/base_servicos.html' %}
+		{% block content %}
+			{% if user.is_authenticated %}
 
-		{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
-
-		<div id="box_opcoes_servicos">
+				<div id="apresentacao_usuario">
+					Bem Vindo!
+					<br>
+					Usuário logado: <b><i>{{ user.username }}</i></b>
+				</div>
 
         	<a href="../cadastrar_pessoa/">
         		<div class="botao_opcoes">
@@ -65,12 +50,17 @@
         		</div>
         	</a>
 
-        	<a href="../">
+        	<a href="{% url 'logout' %}">
         		<div class="botao_opcoes">
           			<div class="titulo_botao_opcoes">Sair do Sistema</div>
           			<i class="material-icons">power_settings_new</i>
         		</div>
         	</a>
-        </div>
-	</body>
-</html>
+				{% else %}
+					<div id="nao_logado">
+						Você não está logado.<br>Faça o login para continuar.
+						<br><br>
+		  			<a href="{% url 'login' %}">Clique aqui para retornar para a página de login!</a>
+					</div>
+				{% endif %}
+			{% endblock %}

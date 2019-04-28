@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset = "UTF-8" />
+        <meta name = "author" content = "John Marcos dos Santos" />
+        <meta name = "robots" content = "index, follow" />
+        <meta http-equiv = "refresh" content = "300" />
+        <link rel = "icon" href = "{% static 'imagens/icon_anjos_de_plantao.ico' %}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="stylesheet" href="{% static 'css/servicos_individuais_css.css' %}">
+		    <title>{% block title %}Cadastrar Pessoa{% endblock %}</title>
+	</head>
+	<body>
+		<div id="box_fundo">
+      {% block content %}
+      {% endblock %}
+		</div>
+	</body>
+</html>
