@@ -27,7 +27,15 @@
 						<button id="botao_opcoes" type="submit" name="botao_salvar">
 							<i class="material-icons">search</i>Pesquisar
 						</button>
-            		</fieldset>
+
+						{% for pessoa in Pessoa %}
+  						{% if forloop.counter < 3 %}
+    					<p> {% pessoa.getNome() %} </p>
+  						{% endif %}
+						{% endfor %}
+
+
+            </fieldset>
 				</div>
 			</form>
 		{% endblock %}

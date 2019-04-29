@@ -32,6 +32,9 @@ class Pessoa(models.Model):
     observacoes = models.TextField()
     dataDeCadastro = models.DateTimeField()
 
+    def getNome(self):
+        return self.nome
+
 class Evento(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.DO_NOTHING)
     nome = models.CharField(max_length=50)

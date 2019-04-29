@@ -29,9 +29,6 @@ def cadastrar_evento(request):
         form = CadastrarEventoForm()
     return render(request, 'blog/cadastrar_evento.html', {'form': form})
 
-def cadastrar_usuario(request):
-    return render(request, 'blog/cadastrar_usuario.html', {})
-
 def caixa_geral(request):
     if request.method == "POST":
         form = CaixaGeralForm(request.POST)
