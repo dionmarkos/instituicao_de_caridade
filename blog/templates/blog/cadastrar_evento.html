@@ -1,56 +1,15 @@
 {% extends 'blog/base_servicos_individuais.html' %}
-	{% block title %}Cadastrar Evento{% endblock %}
-		{% block content %}
+{% block title %}Cadastrar Evento{% endblock %}
+{% block content %}
 
-			<a href="../servicos/" id="posicao_botoes_voltar">
-				<button type="submit" name="botao_voltar">Voltar</button>
-			</a>
-
-			<form action="#salvar" method="post">
-
+			<form method="POST" class="post-form">
+				{% csrf_token %}
 				<div id="posicao_botoes">
 					<button type="reset" name="botao_limpar_dados">Limpar Dados</button>
-					<button type="submit" name="botao_salvar">Salvar</button>
+					<button type="submit" class="save btn btn-default">Salvar</button>
 				</div>
 				<br>
 				<br>
-
-				<div class="box_texto_formularios">
-					<label for="nome"> Nome </label>
-					<input autofocus="autofocus" type="text" name="nome" required="required" style="width: 400px;">
-					<label for="data"> Data </label>
-					<input autofocus="autofocus" type="date" name="data" required="required" style="margin-right: 20px;">
-					Concluído?
-					<label class="switch">
-						<input type="checkbox" name="booleanConcluido">
-  						<span class="slider round"></span>
-					</label>
-				</div>
-
-				<div class="box_texto_formularios">
-					<label for="local"> Local </label>
-					<input type="text" name="local" required="required" style="width: 400px;">
-				</div>
-
-				<div class="box_texto_formularios">
-					<label for="endereco"> Endereço </label>
-					<input type="text" name="endereco" required="required" style="width: 400px;">
-				</div>
-
-				<div class="box_texto_formularios">
-					<label for="cidade"> Cidade </label>
-					<input type="text" name="cidade" required="required" style="width: 280px;">
-					<label for="estado"> Estado </label>
-					<input type="text" name="estado" required="required" style="width: 200px;">
-				</div>
-
-
-				<div class="box_texto_formularios">
-					<fieldset id="legend_observacoes">
-              			<legend>Observações</legend>
-	              			<br>
-	              			<textarea name="observacoes" class="box_texto_formularios" rows="6" cols="40"></textarea>
-            		</fieldset>
-				</div>
+				{{ form.as_p }}
 			</form>
 {% endblock %}
