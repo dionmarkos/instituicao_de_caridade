@@ -1,36 +1,54 @@
 {% extends 'blog/base_servicos_individuais.html' %}
 {% block title %}Consultas{% endblock %}
 		{% block content %}
-			<form action="#salvar" method="post">
-
-				<div id="posicao_botoes">
-					<button type="reset" name="botao_limpar_dados">Limpar Dados</button>
-					<button type="submit" name="botao_salvar">Salvar</button>
-				</div>
-				<br>
-				<br>
 
 				<div class="box_texto_formularios">
 					<fieldset id="legend_consultas">
               			<legend>Consultas</legend>
-	              		Dados
-						<input type="text" name="entrada_doador_recebedor" required="required" style="width: 200px;">
-						Filtro
-						<input list="lista_filtros" name="filtro_pesquisa">
-						<datalist id="lista_filtros">
-	    					<option value="Pessoas">
-    						<option value="Eventos">
-    						<option value="Doações">
-	    					<option value="Transações">
-    						<option value="Usuários">
-    					</datalist>
-						<button id="botao_opcoes" type="submit" name="botao_salvar">
-							<i class="material-icons">search</i>Pesquisar
-						</button>
 
+					<b>PESSOAS</b><br>
+					{% for pessoa in pessoas %}
+					<tbody>
+						<tr>
+							<td>Nome: {{ pessoa.nome }}</td>
+							<td>CPF/CNPJ: {{ pessoa.cpfCnpj }}</td>
+						</tr>
+					</tbody>
+					<br><br>
+					{% endfor %}
 
+					<b>EVENTOS</b><br>
+					{% for evento in eventos %}
+					<tbody>
+						<tr>
+							<td>Nome: {{ evento.nome }}</td>
+							<td>Local: {{ evento.local }}</td>
+						</tr>
+					</tbody>
+					<br><br>
+					{% endfor %}
 
+					<b>TRANSAÇÕES</b><br>
+					{% for transacao in transacoes %}
+					<tbody>
+						<tr>
+							<td>Valor: {{ transacao.valor }}</td>
+							<td>Obervações: {{ transacao.observacoes }}</td>
+						</tr>
+					</tbody>
+					<br><br>
+					{% endfor %}
+
+					<b>DOAÇÕES</b><br>
+					{% for doacao in doacoes %}
+					<tbody>
+						<tr>
+							<td>Valor: {{ doacao.valor }}</td>
+							<td>Obervações: {{ doacao.observacoes }}</td>
+						</tr>
+					</tbody>
+					<br><br>
+					{% endfor %}
             </fieldset>
 				</div>
-			</form>
 		{% endblock %}

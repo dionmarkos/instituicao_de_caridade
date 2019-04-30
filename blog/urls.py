@@ -7,5 +7,6 @@ urlpatterns = [
     path('cadastrar_evento/', views.cadastrar_evento, name='cadastrar_evento'),
     path('caixa_geral/', views.caixa_geral, name='caixa_geral'),
     path('consultas/', views.consultas, name='consultas'),
+    path('consultasOK/', views.consultasOK, name='consultasOK'),
     path('doacoes/', views.doacoes, name='doacoes'),
 ]
