@@ -52,7 +52,7 @@ def consultas(request):
         eventos = eventos.filter(nome__icontains=busca)
         transacoes = transacoes.filter(nome__icontains=busca)
         doacoes = doacoes.filter(nome__icontains=busca)
-    return render(request, 'blog/consultas.html', {'pessoas': pessoas, 'eventos': eventos, 'transacoes': transacoes, 'doacoes': doacoes})
+    return render(request, 'blog/consultas.html', {'pessoas': pessoas, 'eventos': eventos, 'transacoes': transacoes, 'doacoes': doacoes,})
 
 def consultasOK(request, id):
     pessoas = Pessoa.objects.all()
